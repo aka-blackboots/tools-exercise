@@ -1,0 +1,101 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    background-color: rgb(222, 234, 222);
+}
+
+h1, h2{
+    margin: 1rem;
+    text-align: center;
+    color: rgb(0, 73, 129);
+    position: sticky;
+   
+}
+
+.contenedor-principal{
+    margin-top: 5rem;
+    margin-inline: 3rem;
+    margin-bottom: 1rem;
+    background-color: cadetblue;
+    border-style: solid;
+    border-color: rgb(0, 73, 129);
+}
+
+.fila{
+    margin: 1rem;
+    background-color: cadetblue;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.proyecto{
+    margin: 1rem;
+    background-color: rgb(255, 255, 255);
+    border: 3px solid #000000;
+    text-decoration: none;
+    padding: 5rem;
+    background-image: url(./static/logo-a326242dd945bcc271d193f7e6d2f054.png);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.proyecto:hover{
+    padding: 5.5rem;
+    margin:0.5rem;
+    border-color: red;
+    border-width: 3px;
+}
+
+.inicio{
+    margin: 1rem;
+}
+
+.contenedor-modelo{
+    margin: 1rem;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+header{
+    background-color: rgba(255, 255, 255, 0.7);
+    position:absolute;
+    top:1rem;
+    text-align: center;
+    font-size: 2rem;
+}
+
+#Modelo-BIM{
+    height: 100vh;
+    width: 100vw;
+}
+
+.barra-inferior{
+    background-color: transparent;
+    position:absolute;
+    bottom: 1rem;
+    display: flex;
+    flex-wrap:wrap;
+    align-content: center;
+    justify-content: space-around;
+}
+
+button{
+    padding: 0.5rem;
+    margin: 0.5rem;
+    border-style: none;
+    background-color:rgb(166, 228, 150);
+    color: rgb(0, 73, 129);
+    transition: all infinite ease-in-out 0s;
+}
+
+button:hover{
+    border-color: rgb(0, 73, 129);
+    font-weight: bold;
+    padding: 1rem;
+    margin: 0rem;
+}
