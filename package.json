@@ -11,5 +11,8 @@
   "dependencies": {
     "three": "^0.146.0",
     "web-ifc": "^0.0.36"
+  },
+  "devDependencies": {
+    "rollup": "^3.2.5"
   }
 }
