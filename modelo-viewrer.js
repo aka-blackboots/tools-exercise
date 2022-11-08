@@ -1,19 +1,15 @@
-import {proyectos} from "./proyectos.js"
+import { Color } from 'three';
+import { IfcViewerAPI } from 'web-ifc-viewer';
 
-const softIFCjs = document.getElementById("Modelo-BIM")
+const container = document.getElementById('viewer-container');
+const viewer = new IfcViewerAPI({ container, backgroundColor: new Color(0xffffff) });
+viewer.grid.setGrid();
+viewer.axes.setAxes();
 
-const currenturl = window.location.href
-const url = new URL(currenturl)
-const idProperty = url.searchParams.get("id")
+async function loadIfc(url) {
+    await viewer.IFC.setWasmPath("../../../");
+    const model = await viewer.IFC.loadIfcUrl(url);
+    viewer.shadowDropper.renderShadow(model.modelID);
+}
 
-const projectObjArray=proyectos.filter((model) => {
-    if (model.id === idProperty){
-        return model
-    }
-});
-
-const projectObj=projectObjArray[0]
-
-softIFCjs.src=projectObj.url
-
-//<iframe id="Modelo-BIM" src="https://ifcjs.github.io/ifcjs-crash-course/exercises/WIV/hello-world/""></iframe>
+loadIfc('your/IFC/path/model.ifc');
