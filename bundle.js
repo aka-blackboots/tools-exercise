@@ -725,6 +725,34 @@ if ( typeof window !== 'undefined' ) {
 
 }
 
+const proyectos = [
+    {
+        name: "Proyecto IFC.js 1",
+        id:"1",
+        url: "https://ifcjs.github.io/ifcjs-crash-course/sample-apps/01/"
+    },
+    {
+        name: "Proyecto IFC.js  2",
+        id:"2",
+        url: "https://ifcjs.github.io/ifcjs-crash-course/sample-apps/02/"
+    },
+    {
+        name: "Proyecto IFC.js  3",
+        id:"3",
+        url: "https://ifcjs.github.io/ifcjs-crash-course/sample-apps/03/"
+    },
+    {
+        name: "Proyecto IFC.js  4",
+        id:"4",
+        url: "https://ifcjs.github.io/ifcjs-crash-course/sample-apps/04/"
+    },
+    {
+        name: "Proyecto IFC.js  5",
+        id:"5",
+        url: "https://ifcjs.github.io/ifcjs-crash-course/sample-apps/05/"
+    }
+];
+
 const container = document.getElementById('viewer-container');
 const viewer = new IfcViewerAPI({ container, backgroundColor: new Color(0xffffff) });
 viewer.grid.setGrid();
@@ -736,4 +764,16 @@ async function loadIfc(url) {
     viewer.shadowDropper.renderShadow(model.modelID);
 }
 
-loadIfc('your/IFC/path/model.ifc');
+const currenturl = window.location.href;
+const url = new URL(currenturl);
+const idProperty = url.searchParams.get("id");
+
+const projectObjArray=proyectos.filter((model) => {
+    if (model.id === idProperty){
+        return model
+    }
+});
+
+const projectObj=projectObjArray[0];
+
+loadIfc(projectObj);
