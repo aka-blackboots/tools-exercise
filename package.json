@@ -1,0 +1,15 @@
+{
+  "name": "toolsexcercise",
+  "version": "0.0.1",
+  "description": "",
+  "main": "modelo-viewrer.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "three": "^0.146.0",
+    "web-ifc": "^0.0.36"
+  }
+}
