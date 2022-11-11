@@ -21,7 +21,7 @@ for (let project of proyectos){
 
     newProject.textContent = nombreProyecto
 
-    const baseURLNextPage = "http://127.0.0.1:5500/EJERCICIO%20JS/proyecto.html"
+    const baseURLNextPage = "http://127.0.0.1:5500/proyecto.html"
     const newURL = baseURLNextPage + `?id=${idProyecto}`
 
     newProject.href = newURL
