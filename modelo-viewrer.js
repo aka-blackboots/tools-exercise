@@ -3,6 +3,7 @@ import { IfcViewerAPI } from 'web-ifc-viewer';
 import {proyectos} from "./proyectos.js"
 
 const container = document.getElementById('viewer-container');
+const containerName = document.getElementById('nombreModelo');
 const viewer = new IfcViewerAPI({ container, backgroundColor: new Color(0xffffff) });
 viewer.grid.setGrid();
 viewer.axes.setAxes();
@@ -24,4 +25,5 @@ const projectObjArray=proyectos.filter((model) => {
 
 const projectObj=projectObjArray[0]
 
+containerName.textContent=projectObj.name;
 loadIfc(projectObj.url);
