@@ -727,9 +727,9 @@ if ( typeof window !== 'undefined' ) {
 
 const proyectos = [
     {
-        name: "Proyecto IFC.js 1",
+        name: "Estacionamiento Punta Carretas",
         id:"1",
-        url: "s0830-1-mchh.ifc"
+        url: "./s0830-1-mchh.ifc"
     },
 
 ];
@@ -742,8 +742,7 @@ viewer.axes.setAxes();
 
 async function loadIfc(url) {
     const model = await viewer.IFC.loadIfcUrl(url);
-    await viewer.IFC.setWasmPath("./web-ifc-mt.wasm");
-    await viewer.IFC.setWasmPath("./web-ifc.wasm");
+    await viewer.IFC.setWasmPath("./");
     viewer.shadowDropper.renderShadow(model.modelID);
 }
 
