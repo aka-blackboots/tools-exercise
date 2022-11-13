@@ -10,6 +10,8 @@ viewer.axes.setAxes();
 
 async function loadIfc(url) {
     const model = await viewer.IFC.loadIfcUrl(url);
+    await viewer.IFC.setWasmPath("./web-ifc-mt.wasm");
+    await viewer.IFC.setWasmPath("./web-ifc.wasm");
     viewer.shadowDropper.renderShadow(model.modelID);
 }
 
