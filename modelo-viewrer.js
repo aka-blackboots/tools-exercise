@@ -2,7 +2,7 @@ import { Color } from 'three';
 import { IfcViewerAPI } from 'web-ifc-viewer';
 import {proyectos} from "./proyectos.js"
 
-const container = document.getElementById('viewer-container');
+const container = document.getElementById('viewrer-container');
 const containerName = document.getElementById('nombreModelo');
 const viewer = new IfcViewerAPI({ container, backgroundColor: new Color(0xffffff) });
 viewer.grid.setGrid();
@@ -10,7 +10,7 @@ viewer.axes.setAxes();
 
 async function loadIfc(url) {
     const model = await viewer.IFC.loadIfcUrl(url);
-    await viewer.IFC.setWasmPath("./")
+    //await viewer.IFC.setWasmPath("")
     viewer.shadowDropper.renderShadow(model.modelID);
 }
 
